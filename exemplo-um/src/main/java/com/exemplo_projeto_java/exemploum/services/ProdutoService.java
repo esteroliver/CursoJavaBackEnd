@@ -11,7 +11,7 @@ import com.exemplo_projeto_java.exemploum.repository.ProdutoRepository;
 
 @Service
 public class ProdutoService {
-//No service é que haverá as regras para pôr o produto e as exceções
+//No service é que haverá as regras para pôr o produto e as exceções (regras de negócio)
     @Autowired
     private ProdutoRepository prodRepositorio;
 
