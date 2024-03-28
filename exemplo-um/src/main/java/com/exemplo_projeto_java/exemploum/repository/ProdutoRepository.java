@@ -24,6 +24,9 @@ public class ProdutoRepository {
      * Método que retorna o produto encontrado pelo seu ID.
      * @param id do produto a ser encontrado.
      * @return Retorna um produto caso seja encontrado.
+     * stream() - método para percorrer listas
+     * filter() - filtra todos os objetos que correspondem ao parâmetro, retornando uma lista
+     * findFirst() - retorna apenas o primeiro elemento que obedeceu ao filter
      */
     public Optional<Produto> ObterPorID(int id){
         return prods.stream().filter(Produto -> Produto.getId() == id).findFirst();
@@ -61,17 +64,8 @@ public class ProdutoRepository {
             throw new InputMismatchException("Produto não encontrado");
         }
 
-        //Recebendo os ids de prod e de produtoEncontrado
-        int idProdutoEncontrado = produtoEncontrado.get().getId();
-        int idProdutoAtualizado = prod.getId();
-
-        //Verificar se o produto atualizado e o produto encontrado possuem o mesmo ID
-        if (idProdutoAtualizado != idProdutoEncontrado){
-            throw new InputMismatchException("IDs de produtos não correspondem");
-        }
-
         //DELETAR
-        DeletarProduto(idProdutoEncontrado);
+        DeletarProduto(prod.getId());
 
         //INSERIR
         prods.add(prod);
