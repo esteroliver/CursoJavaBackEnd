@@ -3,9 +3,9 @@ package com.exemplo_projeto_java.exemploum.view.model;
 public class ProdutoRequest {
     private String nome;
 
-    private int quant;
+    private Integer quant;
 
-    private double valor;
+    private Double valor;
 
     private String obs;
 
@@ -17,17 +17,17 @@ public class ProdutoRequest {
         this.nome = nome;
     }
 
-    public int getQuant() {
+    public Integer getQuant() {
         return quant;
     }
-    public void setQuant(int quant) {
+    public void setQuant(Integer quant) {
         this.quant = quant;
     }
 
-    public double getValor() {
+    public Double getValor() {
         return valor;
     }
-    public void setValor(double valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
 

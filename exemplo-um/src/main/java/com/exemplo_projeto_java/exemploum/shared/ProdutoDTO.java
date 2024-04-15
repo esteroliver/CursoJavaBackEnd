@@ -1,18 +1,18 @@
 package com.exemplo_projeto_java.exemploum.shared;
 
 public class ProdutoDTO {
-    private int id;
+    private Integer id;
 
     private String nome;
 
-    private int quant;
+    private Integer quant;
 
-    private double valor;
+    private Double valor;
 
     private String obs;
 
 //MÉTODOS
-    public int getId() {
+    public Integer getId() {
         return id;
     }
     public void setId(Integer id) {
@@ -26,14 +26,14 @@ public class ProdutoDTO {
         this.nome = nome;
     }
 
-    public int getQuant() {
+    public Integer getQuant() {
         return quant;
     }
     public void setQuant(Integer quant) {
         this.quant = quant;
     }
 
-    public double getValor() {
+    public Double getValor() {
         return valor;
     }
     public void setValor(Double valor) {

@@ -9,21 +9,21 @@ import jakarta.persistence.GenerationType;
 public class Produto {
     @Id //transforma esse id em uma chave primária (PK)
     @GeneratedValue(strategy = GenerationType.AUTO) // estratégia de atualização que a tabela vai fazer (auto-incremental)
-    private int id;
+    private Integer id;
 
     private String nome;
 
-    private int quant;
+    private Integer quant;
 
     private double valor;
 
     private String obs;
 
 //MÉTODOS
-    public int getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -34,17 +34,17 @@ public class Produto {
         this.nome = nome;
     }
 
-    public int getQuant() {
+    public Integer getQuant() {
         return quant;
     }
-    public void setQuant(int quant) {
+    public void setQuant(Integer quant) {
         this.quant = quant;
     }
 
-    public double getValor() {
+    public Double getValor() {
         return valor;
     }
-    public void setValor(double valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
 
