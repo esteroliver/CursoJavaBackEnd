@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.exemplo_projeto_java.exemploum.model.Produto;
-import com.exemplo_projeto_java.exemploum.repository.ProdutoRepository;
+import com.exemplo_projeto_java.exemploum.repository.ProdutoRepository_old;
 
 @Service
 public class ProdutoService {
 //No service é que haverá as regras para pôr o produto e as exceções (regras de negócio)
     @Autowired
-    private ProdutoRepository prodRepositorio;
+    private ProdutoRepository_old prodRepositorio;
 
     public List<Produto> ObterTodos(){
         return prodRepositorio.ObterTodos();
