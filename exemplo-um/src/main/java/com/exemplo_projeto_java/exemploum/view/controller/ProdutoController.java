@@ -1,4 +1,4 @@
-package com.exemplo_projeto_java.exemploum.controller;
+package com.exemplo_projeto_java.exemploum.view.controller;
 
 
 import org.springframework.web.bind.annotation.RestController;
