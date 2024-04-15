@@ -61,10 +61,10 @@ public class ProdutoController {
      * Esse método irá retornar um produto que for obtido por um ID. Esse ID será selecionado no GetMapping
      */
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<ProdutoResponse>> ObterPorID(@PathVariable Integer id){
-        Optional<ProdutoDTO> dto = prodService.ObterPorID(id);
+    public ResponseEntity<ProdutoResponse> ObterPorID(@PathVariable Integer id){
+        ProdutoDTO dto = prodService.ObterPorID(id);
         ProdutoResponse produto_response = new ModelMapper().map(dto, ProdutoResponse.class);
-        return new ResponseEntity<>(Optional.of(produto_response), HttpStatus.OK);
+        return new ResponseEntity<>(produto_response, HttpStatus.OK);
 
     }
     /**

@@ -32,12 +32,12 @@ public class ProdutoService {
         return produtos_dto;
     }
 
-    public Optional<ProdutoDTO> ObterPorID(Integer id){
+    public ProdutoDTO ObterPorID(Integer id){
         Optional<Produto> produto = prodRepositorio.findById(id);
         if(produto.isEmpty()) throw new ResourceNotFoundException("Produto não encontrado.");
         ProdutoDTO produto_dto = new ModelMapper().map(produto.get(), ProdutoDTO.class);
         //para transformar um optional<produto> em produto, é necessário utilizar o método get()
-        return Optional.of(produto_dto); //transformando o produto_dto em optional para o retorno
+        return produto_dto; //transformando o produto_dto em optional para o retorno
     }
 
     public ProdutoDTO InserirProduto(ProdutoDTO prod){
