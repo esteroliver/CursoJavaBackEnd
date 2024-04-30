@@ -9,6 +9,16 @@
             "projectName": "exemplo-um",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ApirestApplication<apirest>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.apirest.ApirestApplication",
+            "projectName": "apirest",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
