@@ -15,6 +15,7 @@ import com.example.apirest.models.ProdutoModel;
 import com.example.apirest.repositories.ProdutoRepository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -74,5 +75,15 @@ public class ProdutoController {
         BeanUtils.copyProperties(produtoDTO, prodnovo);
         produtoRepository.save(prodnovo);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(prodnovo);
+    }
+
+    @DeleteMapping("/produtos/{id}")
+    public ResponseEntity<Object> deletarProduto(@PathVariable UUID id){
+        Optional<ProdutoModel> prod = produtoRepository.findById(id);
+        if(prod.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Esse produto não foi encontrado.");
+        }
+        produtoRepository.delete(prod.get());
+        return ResponseEntity.status(HttpStatus.OK).body("Produto deletado com sucesso.");
     }
 }
