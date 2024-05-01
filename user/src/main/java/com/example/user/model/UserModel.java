@@ -1,6 +1,4 @@
-package com.example.user.models;
-
-import java.lang.annotation.Inherited;
+package com.example.user.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
